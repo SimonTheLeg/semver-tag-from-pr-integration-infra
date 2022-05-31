@@ -1,0 +1,21 @@
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  semver_tag_on_merge:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: "0"
+      - name: determine tag
+        id: determine-tag
+        uses: simontheleg/semver-tag-on-merge-action@main
+        with:
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+      - name: push tag
+        uses: actions-ecosystem/action-push-tag@v1
+        with:
+          tag: ${{ steps.determine-tag.outputs.new-version }}
