@@ -1,7 +1,0 @@
-on: [push]
-
-jobs:
-  make_kodiak_happy:
-    runs-on: ubuntu-latest
-    steps:
-      - run: echo "hello kodiak"
