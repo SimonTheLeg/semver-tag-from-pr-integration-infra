@@ -15,7 +15,3 @@ jobs:
         uses: simontheleg/semver-tag-from-pr-action@integration-test
         with:
           repo-token: ${{ secrets.GITHUB_TOKEN }}
-      - name: push tag
-        uses: actions-ecosystem/action-push-tag@v1
-        with:
-          tag: ${{ steps.determine-tag.outputs.new-version }}
