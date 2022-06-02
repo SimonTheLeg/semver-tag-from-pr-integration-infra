@@ -15,3 +15,7 @@ jobs:
         uses: simontheleg/semver-tag-from-pr-action@integration-test
         with:
           repo-token: ${{ secrets.GITHUB_TOKEN }}
+          label-major: merge-breaking
+          label-minor: merge-feature
+          label-patch: merge-fix
+          label-none: merge-no-new-version
