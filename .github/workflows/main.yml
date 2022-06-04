@@ -4,7 +4,10 @@ on:
       - main
 
 jobs:
-  semver_tag_on_merge:
+  semver_tag_from_pr:
+    permissions:
+      contents: write
+      pull-requests: read
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
