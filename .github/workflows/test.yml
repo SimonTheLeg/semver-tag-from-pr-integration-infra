@@ -1,0 +1,12 @@
+name: Debug Workflow
+on: [push]
+
+jobs:
+  debug_github:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: "0"
+      - name: debug git
+        run: git remote -v
