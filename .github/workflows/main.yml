@@ -15,7 +15,7 @@ jobs:
           fetch-depth: "0"
       - name: determine tag
         id: determine-tag
-        uses: simontheleg/semver-tag-from-pr-action@integration-test
+        uses: simontheleg/semver-tag-from-pr-action@main
         with:
           repo-token: ${{ secrets.GITHUB_TOKEN }}
           label-major: merge-breaking
